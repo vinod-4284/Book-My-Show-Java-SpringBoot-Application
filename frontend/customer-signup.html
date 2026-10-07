@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Create Account</h2>
+
+    <form id="registrationForm">
+
+        <input
+                type="text"
+                id="fullName"
+                placeholder="Full Name"
+                required>
+
+        <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
+
+        <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+        <select id="userType" required>
+            <option value="">Select User Type</option>
+            <option value="CUSTOMER">Customer</option>
+            <option value="THEATER_OWNER">Theater Owner</option>
+        </select>
+
+        <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="Phone Number"
+                required>
+
+        <textarea
+                id="address"
+                rows="4"
+                placeholder="Address"
+                required></textarea>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+<script>
+    document.getElementById("registrationForm")
+        .addEventListener("submit", async function (e) {
+
+            e.preventDefault();
+
+            const user = {
+                fullName: document.getElementById("fullName").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                userType: document.getElementById("userType").value,
+                phoneNumber: document.getElementById("phoneNumber").value,
+                address: document.getElementById("address").value
+            };
+
+            console.log(user);
+
+            // Spring Boot API Call
+
+            await fetch("http://localhost:9090/api/users/customer/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(user)
+            });
+
+        });
+</script>
+
+</body>
+</html>
