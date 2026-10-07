@@ -28,15 +28,16 @@ Designed to practice **backend development, REST API design, and database integr
 
 ## 📂 Project Structure
 Book-My-Show/
-├── src/main/java/com/example/Book_My_Show/
-│   ├── controllers/     # REST endpoints
-│   ├── services/        # Business logic
-│   ├── repositories/    # JPA repositories
-│   ├── models/          # Entities (Movie, Show, Hall, User, Seat)
-│   └── BookMyShowApplication.java
-├── src/main/resources/
-│   └── application.properties
-└── pom.xml
+ ├── 📁 src/main/java/com/example/Book_My_Show/
+ │   ├── 📂 controllers/       → REST endpoints
+ │   ├── 📂 services/          → Business logic
+ │   ├── 📂 repositories/      → JPA repositories
+ │   ├── 📂 models/            → Entities (Movie, Show, Hall, User, Seat)
+ │   └── 📄 BookMyShowApplication.java
+ ├── 📁 src/main/resources/
+ │   └── ⚙️ application.properties
+ └── 📄 pom.xml
+
 
 
 ---
